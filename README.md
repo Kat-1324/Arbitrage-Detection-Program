@@ -8,7 +8,7 @@ This project was created as a learning exercise for algorithmic trading in Pytho
 * For each currency pair, exchange rates are calculated using the best bid and best ask prices from the corresponding **live order books**. 
 * A directed graph is constructed with nodes representing individual currencies, edges representing a currency pair relationship and weights representing the linearized exchange rates for each currency pair relationship. 
 * The Bellman-Ford Algorithm is applied to the directed graph to establish if a negative cycle exists (this signals an arbitrage opportunity).
-* If the arbitrage opportunity yields a profit (taking into account the transaction fees per each order), the maximum possible order size for each currency pair in the arbitrage cycle is printed to the console, along with the generated profit. 
+* If the arbitrage opportunity yields a profit (taking into account the taker transaction fees per each order), the maximum possible order size for each currency pair in the arbitrage cycle is printed to the console, along with the generated profit. 
 
 # Quick Start
 
@@ -27,7 +27,7 @@ Example input values have already been provided in `main.py` if you want to see 
 currencies = ['ETH', 'BTC', 'USD']
 ```
 
-* **transaction_fee:** a float representing the transaction fee percentage charged per each order. For example, if a 0.02% transaction fee is applied per each order:
+* **transaction_fee:** a float representing the taker transaction fee percentage charged per each order. For example, if a 0.02% transaction fee is applied per each order:
 
 ```python
 transaction_fee = 0.02
@@ -42,9 +42,9 @@ balance = {'BTC': 0.98, 'USD': 1000, 'ETH': 500}
 #### What outputs should I expect from `main.py`?
 
 * If no arbitrage is detected, the program will print **"No arbitrage opportunity detected!"** to the console.
-* If an arbitrage is detected, but is unprofitable (defined as a loss being made after transaction fees have been applied), the program will print  **"An arbitrage opportunity was detected, but it was unprofitable!"** to the console. 
+* If an arbitrage is detected, but is unprofitable (defined as a loss being made after taker transaction fees have been applied), the program will print  **"An arbitrage opportunity was detected, but it was unprofitable!"** to the console. 
 
-* If an arbitrage is detected and yields a profit (defined as a positive gain being made after transaction fees have been applied), the program will print the **order sequence** and **overall profit** made via the arbitrage opportunity to the console.
+* If an arbitrage is detected and yields a profit (defined as a positive gain being made after taker transaction fees have been applied), the program will print the **order sequence** and **overall profit** made via the arbitrage opportunity to the console.
 
 **NOTE:** The program **always** returns the (updated) balance, irrespective of whether a profitable arbitrage opportunity was found or not.
 
