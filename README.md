@@ -1,4 +1,4 @@
-# Arbitrage Detection System for Coinbase Pro
+# Arbitrage Detection Program for Coinbase Pro
 
 
 This project was created as a learning exercise for algorithmic trading in Python. The program detects **arbitrage** on the [Coinbase Pro](https://pro.coinbase.com/) exchange by implementing the **Bellman-Ford algorithm**. If a valid and profitable arbitrage opportunity is found, the program prints an order sequence and overall profit to the console. 
@@ -12,13 +12,13 @@ This project was created as a learning exercise for algorithmic trading in Pytho
 
 # Quick Start
 
-#### How do I launch the system?
+#### How do I launch the program?
 
-Access  `main.py` in the repository. Adjust the `currencies` and `tradedVolume` variables if desired (example values have already been provided in `main.py`). Run the program.
+Access  `main.py` in the repository. Adjust the `currencies` and `tradedVolume` variables if desired (example values have already been provided in `main.py`). Run the script.
 
 #### What are the input variables in `main.py`?
 
-* **client:** an exchange client object. Currently only access to Coinbase Pro is supported by the system.
+* **client:** an exchange client object. Currently only access to Coinbase Pro is supported by the program.
 
 ```python
 from clients.coinbase.coinbase_client import CoinbaseClient
